@@ -30,7 +30,7 @@ const CoverSection = ({ handlePlayMusic, handleOpen, namaTamu }: Props) => {
         <p>Kepada Yth.</p>
         <p>Bapak/Ibu/Sahabat:</p>
         <p className="mb-10 font-semibold capitalize">{namaTamu}</p>
-        <button className="btn btn-primary" onClick={handleOpenInvitation} data-aos="fade-down" data-aos-delay="800">
+        <button className="btn btn-primary rounded-md" onClick={handleOpenInvitation} data-aos="fade-down" data-aos-delay="800">
           <MdArrowDownward />
           <span className="ml-2">Buka Undangan</span>
         </button>

@@ -1,32 +1,68 @@
-import dynamic from 'next/dynamic';
-import { NextPage } from 'next';
-import Link from 'next/link';
-import Lottie from 'lottie-react';
-import { AiOutlineArrowRight } from 'react-icons/ai';
-import InvitationAnimation from '../assets/lotties/send-invitation.json';
-const BaseLayout = dynamic(() => import('@/layouts/BaseLayout'));
+import { useState, useRef } from "react";
+import { useRouter } from "next/router";
+import { NextPage } from "next";
+import dynamic from "next/dynamic";
+const InvitationLayout = dynamic(() => import("@/layouts/InvitationLayout"));
+const CoverSection = dynamic(() => import("@/components/CoverSection"));
+const HeroSection = dynamic(() => import("@/components/HeroSection"));
+const BrideSection = dynamic(() => import("@/components/BrideSection"));
+const GallerySection = dynamic(() => import("@/components/GallerySection"));
+const EventSection = dynamic(() => import("@/components/EventSection"));
+const GiftSection = dynamic(() => import("@/components/GiftSection"));
+const ProtocolSection = dynamic(() => import("@/components/ProtocolSection"));
+const MapSection = dynamic(() => import("@/components/MapSection"));
+const MessageSection = dynamic(() => import("@/components/MessageSection"));
+const MusicPlayer = dynamic(() => import("@/components/MusicPlayer"));
 
-const Home: NextPage = () => {
+const Invitation: NextPage = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isPlay, setIsPlay] = useState<boolean>(true);
+
+  const audioRef = useRef<any>();
+  const router = useRouter();
+  const { nama } = router.query;
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handlePlayMusic = () => {
+    audioRef.current?.pause();
+    if (!audioRef.current?.paused || !isPlay) {
+      setIsPlay(true);
+      audioRef.current?.play();
+    } else {
+      setIsPlay(false);
+      audioRef.current?.pause();
+    }
+  };
+
   return (
-    <BaseLayout title="Beranda">
-      <section className="h-screen">
-        <div className="container mx-auto h-full flex justify-center items-center">
-          <div className="flex-1 flex flex-col items-start">
-            <h1 className="text-[64px] font-bold text-zinc-800 leading-tight">
-              Buat Undangan <br /> Lebih Mudah
-            </h1>
-            <Link href="/ali-zahra" className="btn btn-primary mt-6">
-              <AiOutlineArrowRight />
-              <span className="ml-2">Mulai Sekarang</span>
-            </Link>
-          </div>
-          <div className="flex-1">
-            <Lottie animationData={InvitationAnimation} loop={true}></Lottie>
-          </div>
-        </div>
-      </section>
-    </BaseLayout>
+    <InvitationLayout title="Ali & Zahra">
+      {!isOpen ? (
+        <CoverSection
+          namaTamu={nama}
+          handlePlayMusic={handlePlayMusic}
+          handleOpen={handleOpen}
+        />
+      ) : (
+        <>
+          <HeroSection />
+          <BrideSection />
+          <GallerySection />
+          <EventSection />
+          <GiftSection />
+          <ProtocolSection />
+          <MapSection />
+          <MessageSection />
+          <MusicPlayer handlePlayMusic={handlePlayMusic} isPlay={isPlay} />
+          <audio ref={audioRef} autoPlay loop>
+            <source src="./assets/audio/terlukisIndah.mp3" type="audio/mp3" />
+          </audio>
+        </>
+      )}
+    </InvitationLayout>
   );
 };
 
-export default Home;
+export default Invitation;

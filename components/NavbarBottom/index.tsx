@@ -15,11 +15,6 @@ const links = [
     href: '#mempelai',
   },
   {
-    name: 'Galeri',
-    icon: <MdPhotoLibrary />,
-    href: '#galeri',
-  },
-  {
     name: 'Acara',
     icon: <MdEventNote />,
     href: '#acara',
@@ -30,20 +25,10 @@ const links = [
     href: '#kado',
   },
   {
-    name: 'Prokes',
-    icon: <MdSecurity />,
-    href: '#prokes',
-  },
-  {
     name: 'Lokasi',
     icon: <MdLocationOn />,
     href: '#lokasi',
-  },
-  {
-    name: 'Ucapan',
-    icon: <MdMessage />,
-    href: '#ucapan',
-  },
+  }
 ];
 
 const NavbarBottom = () => {

@@ -11,7 +11,7 @@ interface Props {
 
 const EventCard = ({ title, date, time, place, location, locationHref }: Props) => {
   return (
-    <div className="w-full max-w-md bg-white mx-auto px-12 py-6 border border-zinc-300 border-t-[5px] border-t-zinc-800 shadow-xl mt-12">
+    <div className="w-full max-w-md rounded-lg bg-white mx-auto px-12 py-6 border border-zinc-300 border-t-[5px] border-t-zinc-800 shadow-xl mt-12">
       <h2 className="text-5xl font-secondary text-center text-zinc-800 leading-tight">{title}</h2>
       <hr className="my-4" />
       <div className="flex justify-between items-center">

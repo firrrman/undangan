@@ -25,7 +25,7 @@ const CoverSection = ({ handlePlayMusic, handleOpen, namaTamu }: Props) => {
           The Wedding of
         </h3>
         <h1 className="sm:text-8xl text-6xl font-secondary text-zinc-800 leading-tight mb-2" data-aos="fade-down" data-aos-delay="300">
-          Mahesa & Cella
+          Mahesa & Herla
         </h1>
         <p>Kepada Yth.</p>
         <p>Bapak/Ibu/Sahabat:</p>

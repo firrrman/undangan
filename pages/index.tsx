@@ -38,7 +38,7 @@ const Invitation: NextPage = () => {
   };
 
   return (
-    <InvitationLayout title="Ali & Zahra">
+    <InvitationLayout title="Mahesa & Herla">
       {!isOpen ? (
         <CoverSection
           namaTamu={nama}
@@ -49,15 +49,12 @@ const Invitation: NextPage = () => {
         <>
           <HeroSection />
           <BrideSection />
-          <GallerySection />
           <EventSection />
           <GiftSection />
-          <ProtocolSection />
           <MapSection />
-          <MessageSection />
           <MusicPlayer handlePlayMusic={handlePlayMusic} isPlay={isPlay} />
           <audio ref={audioRef} autoPlay loop>
-            <source src="./assets/audio/terlukisIndah.mp3" type="audio/mp3" />
+            <source src="./assets/audio/marry your.mp3" type="audio/mp3" />
           </audio>
         </>
       )}

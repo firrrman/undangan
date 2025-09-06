@@ -27,10 +27,11 @@ const GiftModal = ({ isShowModal, setIsShowModal }: IProps) => {
       <div className="w-full max-w-2xl bg-white mx-auto px-12 py-20 border border-zinc-300 border-t-[5px] border-t-zinc-800 shadow-xl text-center">
         <h2 className="sm:text-6xl text-5xl font-secondary font-bold text-zinc-800 leading-tight mb-4">Kado Digital</h2>
         <p className="text-zinc-600 sm:text-[18px] max-w-[750px] mb-12">Bagi yang ingin memberikan hadiah untuk pernikahan kami, silakan transfer ke rekening ya</p>
-        <Image src="/assets/images/mandiri.png" alt="mandiri" width={0} height={0} sizes="100vw" className="w-[150px] h-auto mx-auto mb-6" />
-        <p className="text-zinc-700 font-medium sm:text-[18px] max-w-[750px]">Ali Akbar Afriyanto</p>
+        <Image src="/assets/images/dana.png" alt="dana" width={0} height={0} sizes="100vw" className="w-[150px] h-auto mx-auto mb-6" />
+        <p className="text-zinc-700 font-medium sm:text-[18px] max-w-[750px]">Ahmad Mahesa</p>
         <p className="text-zinc-700 font-bold sm:text-[18px] max-w-[750px]" ref={norekRef}>
-          1140021222297
+          08567429083
+          
         </p>
         <div className="flex justify-center items-center mt-12 gap-x-3">
           <button className="btn btn-outline" onClick={() => setIsShowModal(false)}>
